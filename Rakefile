@@ -25,16 +25,16 @@ end
 
 @taskClass::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "bio-samtools"
-  gem.homepage = "http://github.com/helios/bioruby-samtools"
+  gem.name = "bio-samtools-wrapper"
+  gem.homepage = "https://github.com/cb2e6f/bio-samtools-wrapper"
   gem.license = "GPL-3.0"
-  gem.summary = %Q{Binder of samtools for ruby, on the top of FFI.}
-  gem.description = %Q{Binder of samtools for ruby, on the top of FFI. 
+  gem.summary = %Q{wrapper of samtools for ruby.}
+  gem.description = %Q{wrapper of samtools for ruby.
 
   This project was born from the need to add support of BAM files to 
   the gee_fu genome browser (http://github.com/danmaclean/gee_fu).}
-  gem.email = "Ricardo.Ramirez-Gonzalez@tgac.ac.uk"
-  gem.authors = ["Ricardo Ramirez-Gonzalez","Dan MacLean","Raoul J.P. Bonnal"]
+  gem.email = "rob.ellis@jic.ac.uk"
+  gem.authors = ["Rob Ellis"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
@@ -67,7 +67,7 @@ RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "bio-samtools #{version}"
+  rdoc.title = "bio-samtools-wrapper #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

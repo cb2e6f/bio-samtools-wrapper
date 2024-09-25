@@ -55,12 +55,12 @@ else
   version.close
   #TODO if local instalarion, make sure that the paths of the gzip files exist. the version shoulf match the supported version of samtools in the library 
   #url = "http://sourceforge.net/projects/samtools/files/samtools/#{Version}/samtools-#{Version}.tar.bz2/download"
-  url="https://github.com/samtools/samtools/releases/download/#{Version}/samtools-#{Version}.tar.bz2"
+  url="http://github.com/samtools/samtools/releases/download/#{Version}/samtools-#{Version}.tar.bz2"
   SamToolsFile = "samtools-#{Version}.tar.bz2"
-  url_bcftools="https://github.com/samtools/bcftools/releases/download/#{Version}/bcftools-#{Version}.tar.bz2"
+  url_bcftools="http://github.com/samtools/bcftools/releases/download/#{Version}/bcftools-#{Version}.tar.bz2"
   BcfToolsFile = "bcftools-#{Version}.tar.bz2"
 
-  File.open(File.joint(path,"Rakefile"),"w") do |rakefile|
+  File.open(File.join(path,"Rakefile"),"w") do |rakefile|
   rakefile.write <<-RAKE
   require 'rbconfig'
   require 'open-uri'
@@ -72,13 +72,13 @@ else
   URL = "#{url}"
   URL_bcf = "#{url_bcftools}"
   task :download do
-    open(URL) do |uri|
+    URI.open(URL) do |uri|
       File.open("#{SamToolsFile}",'wb') do |fout|
         fout.write(uri.read)
       end #fout
     end #uri
 
-    open(URL_bcf) do |uri|
+    URI.open(URL_bcf) do |uri|
       File.open("#{BcfToolsFile}",'wb') do |fout|
         fout.write(uri.read)
       end #fout
